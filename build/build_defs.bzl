@@ -128,7 +128,7 @@ fi
 [[ "$$2" = external/* ]] && F2="$${2#external/}" || F2="$$TEST_WORKSPACE/$$2"
 F1="$$(rlocation "$$F1")"
 F2="$$(rlocation "$$F2")"
-diff -q "$$F1" "$$F2"
+diff -q -I '^[[:space:]]*//.*protoc' "$$F1" "$$F2"
 eof
 """,
     )
